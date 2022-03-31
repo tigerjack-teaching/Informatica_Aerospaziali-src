@@ -21,7 +21,7 @@ Altri
 * [Quadrato](src/quadrato.c)
 * [Conversione in binario invertita](src/binario_inverso.c)
 * [Conversione in binario dritta - alternativa 1](src/binario_dritto.c)
-* [Conversione in binario dritta - alternativa 2](src/)
+* [Conversione in binario dritta - alternativa 2](src/binario_dritto2.c)
 * [Esempio getchar](src/getchar_ex.c)
 
 ## Lez. 04
