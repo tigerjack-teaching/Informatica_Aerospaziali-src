@@ -1,5 +1,12 @@
 # InfoAmbientali-src
-Source code per il corso di Informatica per Ambientali
+Codice sorgente per il corso di Informatica per Ambientali.
+Per compilare i file eseguire
+
+```bash
+gcc -o <nome_eseguibile> <nome_file>.c
+```
+
+dove ``<nome_eseguibile>`` è il nome dell'eseguibile (scelto a piacere, a.out di default) e ``<nome_file>.c`` è il nome del file sorgente.
 
 # A.Y. 2021-22
 ## Lez. 03
