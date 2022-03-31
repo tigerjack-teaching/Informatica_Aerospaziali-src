@@ -1,3 +1,5 @@
+# ccls
+*.ccls-cache/
 # Prerequisites
 *.d
 
