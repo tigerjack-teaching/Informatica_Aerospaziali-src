@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-  // Dichiariamo e acquisiamo il nostro n
+
+  // Dichiariamo e acquisiamo il nostro N
   unsigned n;
   printf("Inserisci un numero\n");
   scanf("%u", &n);
