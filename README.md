@@ -35,8 +35,10 @@ default) e ``<nome_file>.c`` è il nome del file sorgente.
 * [Bubble sort](src/bubble_sort.c)
 * [Insertion sort](src/insertion_sort.c)
 * [Selection sort](src/selection_sort.c)
-<!-- * [Stampa tabelline](src/tabelline.c) -->
-<!-- * [Gioco tris](src/tris.c) -->
+
+**Altri**
+* [Stampa tabelline](src/tabelline.c)
+* [Gioco tris](src/tris.c)
 
 
 ## Lez. 05
