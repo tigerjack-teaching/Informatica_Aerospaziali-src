@@ -1,5 +1,5 @@
 # About
-Codice sorgente per il corso di Informatica per Ambientali.
+Codice sorgente per il corso di Informatica per Aerospaziali.
 Per compilare i file eseguire
 
 ```bash
@@ -42,7 +42,6 @@ default) e ``<nome_file>.c`` è il nome del file sorgente.
 
 
 ## Lez. 05
-  * 
 * [Parole intarsiate](src/parole_intarsiate.c)
 * [Parole intarsiate2](src/parole_intarsiate2.c)
 * [Coppie](src/coppie.c)
