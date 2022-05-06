@@ -33,8 +33,8 @@ default) e ``<nome_file>.c`` è il nome del file sorgente.
 * [Numeri affiatati](src/affiatati.c)
 * [Stima pi greco ](src/pi_monte_carlo.c)
 * [Bubble sort](src/bubble_sort.c)
-* [Bubble sort](src/insertion_sort.c)
-* [Bubble sort](src/selection_sort.c)
+* [Insertion sort](src/insertion_sort.c)
+* [Selection sort](src/selection_sort.c)
 <!-- * [Stampa tabelline](src/tabelline.c) -->
 <!-- * [Gioco tris](src/tris.c) -->
 
