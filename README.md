@@ -1,5 +1,5 @@
 # About
-Codice sorgente per il corso di Informatica per Ambientali.
+Codice sorgente per il corso di Informatica per Aerospaziali.
 Per compilare i file eseguire
 
 ```bash
