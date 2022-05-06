@@ -43,6 +43,14 @@ default) e ``<nome_file>.c`` è il nome del file sorgente.
 
 ## Lez. 05
   * 
+* [Parole intarsiate](src/parole_intarsiate.c)
+* [Parole intarsiate2](src/parole_intarsiate2.c)
+* [Coppie](src/coppie.c)
+* [Conteggio caratteri](src/conteggio_caratteri.c)
+* [Intervallo valori](src/intervallo_valori.c)
+* [Moda sequenza](src/moda.c)
+* [Anagrammi](src/anagrammi.c)
+* [Parole hertziane](src/hertziane.c)
 
 ## Lez. 06
 * 
