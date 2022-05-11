@@ -27,7 +27,7 @@ default) e ``<nome_file>.c`` è il nome del file sorgente.
 * [Conversione in binario dritta - alternativa 2](src/binario_dritto2.c)
 
 ## Lez. 04
-* [Esempio uso getchar](src/getchar_ex.c)
+* [String2int con getchar](src/getchar_ex.c)
 * [Numeri triangolari](src/triangolari.c)
 * [Sequenze pari](src/sequenze.c)
 * [Numeri affiatati](src/affiatati.c)
