@@ -29,7 +29,7 @@ int main() {
       printf("%c", secondaParola[i]);
     printf("\n");
   }
-  return 1;
+  return 0;
 } // end main
 
 int cercaIndice(char c, char str[]) {

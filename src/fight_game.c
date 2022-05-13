@@ -37,11 +37,6 @@ player createPlayer() {
 }
 
 int fight(player p1, player p2, short eps) {
-  if (p1.energy <= 0)
-    return -1;
-  if (p2.energy <= 0)
-    return -2;
-
   player *better, *worse;
   short abil_diff = p1.fight_ability - p2.fight_ability;
 
