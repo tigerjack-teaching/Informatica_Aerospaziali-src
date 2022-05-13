@@ -50,7 +50,7 @@ default) e ``<nome_file>.c`` è il nome del file sorgente.
 * [Intervallo valori](src/intervallo_valori.c)
 * [Moda sequenza](src/moda.c)
 * [Anagrammi](src/anagrammi.c)
-* [Parole hertziane](src/hertziane.c**
+* [Parole hertziane](src/hertziane.c)
 
 ## Lez. 06
 <!-- **Funzioni*** -->
