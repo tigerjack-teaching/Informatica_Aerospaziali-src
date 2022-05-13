@@ -63,7 +63,7 @@ default) e ``<nome_file>.c`` è il nome del file sorgente.
 <!-- a -->
 * [Stringhe libreria](src/stringhe-libreria.c)
 * [Cerniera](src/cerniera.c)
-* [Plane manager](src/plane_manager.c)
+* [Plane manager](src/plane_manager_stack.c)
 <!-- * [Tuffi](src/tuffi.c) -->
 
 ## Lez. 07
