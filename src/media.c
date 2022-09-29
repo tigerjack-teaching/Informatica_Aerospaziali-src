@@ -1,25 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h>
+// Prova con input 11.6 e 7.3. Cosa succede nell'output?
 
 int main(int argc, char *argv[]) {
-  float somma = 0;
-  int n = 0;
-  float x;
-  printf("Inserisci un numero\n");
-  scanf("%f", &x);
+  float A, B, Y;
+  printf("Inserisci A\n");
+  scanf("%f", &A);
+  printf("Inserisci B\n");
+  scanf("%f", &B);
 
-  while (x != 0) {
-    somma += x;
-    n += 1;
-    printf("Inserisci un numero\n");
-    scanf("%f", &x);
-  }
+  Y = (A + B)/2;
 
-  if (n == 0) {
-    printf("Nessun numero inserito, media 0 \n");
-  } else {
-    printf("Media = %f\n", somma / n);
-  }
+  printf("Media = %f\n", Y);
 
   return 0;
 }
