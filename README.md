@@ -38,26 +38,26 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 # A.Y. 2022-23
 ## Lez. 02
 **Intro C e costrutto if**
-
 * [Confronto](src/confronto.c)
 * [Media](src/media.c)
 * [Pari/Dispari](src/dis_pari.c)
-* [Massimo/Minimo](src/max_min.c)
+* [Massimo/Minimo tra 3 numeri](src/max_min.c)
 * [Intersezione rette](src/intersezione.c)
+
+**Costrutti iterazione while**
+* [Confronto ripetuto](src/confronto_ripetuto.c)
+* [Media](src/media_var.c)
+* [Quadrato](src/quadrato.c)
 
 ## Lez. 03
 **Costrutti iterazione**
-<!-- * [Confronto ripetuto](src/confronto_ripetuto.c) -->
-<!-- * [Media](src/media_var.c) -->
 <!-- * [Fibonacci](src/fibonacci.c) -->
 <!-- * [Numeri primi](src/primi.c) -->
+<!-- * [Numeri triangolari](src/triangolari.c) -->
 <!-- * [Conversione in binario invertita](src/binario_inverso.c) -->
 <!-- * [Conversione in binario dritta - alternativa 1](src/binario_dritto.c) -->
 <!-- * [Conversione in binario dritta - alternativa 2](src/binario_dritto2.c) -->
 
-**Altri**
-<!-- * [Quadrato](src/quadrato.c) -->
-<!-- * [Numeri triangolari](src/triangolari.c) -->
 
 ## Lez. 04
 **Stringhe, array, struct, typedef**

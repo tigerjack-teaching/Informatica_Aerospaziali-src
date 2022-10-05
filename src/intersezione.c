@@ -3,8 +3,7 @@
  */
 #include <stdio.h>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   /*
    * L'idea e' che le rette siano rappresentate in maniera esplicita, come
    * y1 = ax + b, y2 = cx + d. All'utente chiediamo i coefficienti a, b, c e d.
@@ -22,7 +21,7 @@ int main(int argc, char *argv[])
   printf("\nd: ");
   scanf("%f", &d);
 
-  x = (d-b) / (a - c);
+  x = (d - b) / (a - c);
   y = a * x + b;
 
   printf("\nL'intersezione tra");
@@ -34,4 +33,3 @@ int main(int argc, char *argv[])
 
   return 0;
 }
-
