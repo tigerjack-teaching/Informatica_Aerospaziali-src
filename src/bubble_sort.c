@@ -1,10 +1,14 @@
+/*
+ * Implementare un programma che preso un vettore di interi, ordini i suoi
+ * elementi in ordine crescente, utilizzando la tecnica del bubble sort.
+ */
 #include <stdio.h>
 #define LUN_MAX 100
 
 int main(int argc, char *argv[]) {
   int i, j, n, aux;
   int sentinella;
-  int V[LUN_MAX];
+  int vet[LUN_MAX];
 
   /* Acquisiamo un intero n, che rappresenta il numero di elementi da acquisire.
    */
@@ -16,7 +20,7 @@ int main(int argc, char *argv[]) {
   /* Acquisimo gli elementi del vettore da ordinare. */
   printf("\nInserisci gli elementi del vettore: ");
   for (i = 0; i < n; ++i) {
-    scanf("%d", &V[i]);
+    scanf("%d", &vet[i]);
   }
 
   /* Per l'algoritmo di bubble sort, non basta una semplice passata di scambi,
@@ -27,10 +31,10 @@ int main(int argc, char *argv[]) {
     /* Iteriamo su tutte le coppie presenti nel vettore, e scambiamo gli
        elementi adiacenti se non rispettano l'ordinamento. */
     for (j = 0; j < n - 1; j++) {
-      if (V[j] > V[j + 1]) {
-        aux = V[j + 1];
-        V[j + 1] = V[j];
-        V[j] = aux;
+      if (vet[j] > vet[j + 1]) {
+        aux = vet[j + 1];
+        vet[j + 1] = vet[j];
+        vet[j] = aux;
 
         /* Se facciamo almeno uno scambio in una iterazione, lo segnaliamo
            nella nostra variabile sentinella. */
@@ -49,7 +53,7 @@ int main(int argc, char *argv[]) {
 
   printf("\nStato finale del vettore: ");
   for (i = 0; i < n; i++)
-    printf("%d", V[i]);
+    printf("%d", vet[i]);
 
   return 0;
 }

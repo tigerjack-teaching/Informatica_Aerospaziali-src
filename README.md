@@ -36,7 +36,7 @@ e quindi compilare il file principale (contenente il `main`), linkando il file d
 Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html)
 
 # A.Y. 2022-23
-## Lez. 02
+## Ese. 02
 **Intro C e costrutto if**
 * [Confronto](src/confronto.c)
 * [Media](src/media.c)
@@ -44,33 +44,41 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 * [Massimo/Minimo tra 3 numeri](src/max_min.c)
 * [Intersezione rette](src/intersezione.c)
 
-**Costrutti iterazione while**
+**Costrutto iterazione while**
 * [Confronto ripetuto](src/confronto_ripetuto.c)
 * [Media](src/media_var.c)
 * [Quadrato](src/quadrato.c)
 
-## Lez. 03
+
+## Lez. XX
+**Esercizi visti a lezione**
+* [Numeri triangolari](src/triangolari.c)
+* [Conversione in binario invertita](src/binario_inverso.c)
+* [Conversione in binario dritta - alternativa 1](src/binario_dritto.c)
+* [Conversione in binario dritta - alternativa 2](src/binario_dritto2.c)
+
+
+## Ese. 03
 **Costrutti iterazione**
-<!-- * [Fibonacci](src/fibonacci.c) -->
-<!-- * [Numeri primi](src/primi.c) -->
-<!-- * [Numeri triangolari](src/triangolari.c) -->
-<!-- * [Conversione in binario invertita](src/binario_inverso.c) -->
-<!-- * [Conversione in binario dritta - alternativa 1](src/binario_dritto.c) -->
-<!-- * [Conversione in binario dritta - alternativa 2](src/binario_dritto2.c) -->
+* [Numeri primi](src/primi.c)
+* [Fibonacci](src/fibonacci.c)
+* [Sequenze pari](src/sequenze.c)
+* [Numeri affiatati](src/affiatati.c)
+
+**Array***
+* [Coppie](src/coppie.c)
+* [Bubble sort](src/bubble_sort.c)
+
+**Vari**
+* [Stampa tabelline](src/tabelline.c)
+* [Stima pi greco](src/pi_monte_carlo.c)
 
 
 ## Lez. 04
 **Stringhe, array, struct, typedef**
 <!-- * [String2int con getchar](src/getchar_ex.c) -->
-<!-- * [Sequenze pari](src/sequenze.c) -->
-<!-- * [Numeri affiatati](src/affiatati.c) -->
-<!-- * [Stima pi greco ](src/pi_monte_carlo.c) -->
-<!-- * [Bubble sort](src/bubble_sort.c) -->
-
-<!-- **Altri** -->
-<!-- * [Insertion sort](src/insertion_sort.c) -->
 <!-- * [Selection sort](src/selection_sort.c) -->
-<!-- * [Stampa tabelline](src/tabelline.c) -->
+<!-- * [Insertion sort](src/insertion_sort.c) -->
 <!-- * [Gioco tris](src/tris.c) -->
 
 
@@ -78,7 +86,6 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 **Stringhe, array, struct, typedef**
 <!-- * [Parole intarsiate](src/parole_intarsiate.c) -->
 <!-- * [Parole intarsiate2](src/parole_intarsiate2.c) -->
-<!-- * [Coppie](src/coppie.c) -->
 <!-- * [Conteggio caratteri](src/conteggio_caratteri.c) -->
 <!-- * [Intervallo valori](src/intervallo_valori.c) -->
 <!-- * [Moda sequenza](src/moda.c) -->

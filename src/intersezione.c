@@ -21,6 +21,11 @@ int main(int argc, char *argv[]) {
   printf("\nd: ");
   scanf("%f", &d);
 
+  if (a == c) {
+    printf("Rette parallele\n");
+    return -1;
+  }
+
   x = (d - b) / (a - c);
   y = a * x + b;
 

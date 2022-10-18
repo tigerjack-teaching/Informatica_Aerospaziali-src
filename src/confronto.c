@@ -8,6 +8,7 @@ int main(int argc, char *argv[]) {
   scanf("%d", &A);
   printf("Inserisci il secondo intero positivo\n");
   scanf("%d", &B);
+  printf("A = %d, B = %d\n", A, B);
   if (A == B) {
     printf("A uguale a B\n");
   }

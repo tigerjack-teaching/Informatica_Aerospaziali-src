@@ -4,13 +4,13 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  int x;
+  double x;
 
   printf("Inserisci un intero positivo\n");
-  scanf("%u", &x);
+  scanf("%f", &x);
 
-  printf("%u e': ", x);
-  if (x % 2 == 0) {
+  printf("%f e': ", x);
+  if (x % 2.0 == 0) {
     printf("pari");
   }
   else {

@@ -1,3 +1,7 @@
+/*
+ * Scrivere un programma che stimi il valore di $\pi$, utilizzando il metodo di
+ * Monte Carlo.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

@@ -1,3 +1,9 @@
+/*
+ * Implementare un programma che stampa, fornendo in output una formattazione
+ * ragionevole, le tabelline dei numeri dall'1 al 9. Si richiede, in
+ * particolare, di stampare l'output andando a capo alla fine della tabellina di
+ * ogni numero, e di allineare verticalmente le varie linee delle tabelline.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 

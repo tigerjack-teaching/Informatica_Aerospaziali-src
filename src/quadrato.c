@@ -1,3 +1,6 @@
+/*
+ * Stampare il quadrato di un numero x, x^2, sfruttando la proprieta' ch l
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,10 +8,11 @@ int main(int argc, char *argv[]) {
   unsigned n;
   // Procediamo all'acquisizione del numero.
 
-  do {
-    printf("Inserisci un numero\n");
-    scanf("%u", &n);
-  } while (n <= 0);
+  printf("Inserisci un numero positivo\n");
+  scanf("%u", &n);
+  if (n <= 0) {
+    printf("Numero errato\n");
+  }
 
   // Procediamo con il sommare i primi n numeri dispari, per calcolare il
   // quadrato del numero n. Quello che vogliamo fare è,
