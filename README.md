@@ -56,6 +56,7 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 * [Conversione in binario invertita](src/binario_inverso.c)
 * [Conversione in binario dritta - alternativa 1](src/binario_dritto.c)
 * [Conversione in binario dritta - alternativa 2](src/binario_dritto2.c)
+* [String2int con getchar](src/getcharex.c)
 
 
 ## Ese. 03
@@ -65,46 +66,54 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 * [Sequenze pari](src/sequenze.c)
 * [Numeri affiatati](src/affiatati.c)
 
-**Array***
+**Array**
 * [Coppie](src/coppie.c)
 * [Bubble sort](src/bubble_sort.c)
 
 **Vari**
-* [Stampa tabelline](src/tabelline.c)
 * [Stima pi greco](src/pi_monte_carlo.c)
 
 
 ## Lez. 04
-**Stringhe, array, struct, typedef**
-<!-- * [String2int con getchar](src/getchar_ex.c) -->
-<!-- * [Selection sort](src/selection_sort.c) -->
-<!-- * [Insertion sort](src/insertion_sort.c) -->
-<!-- * [Gioco tris](src/tris.c) -->
+**Array mono/multi-dimensionali, stringhe, struct typedef**
+* [Massimo e minimo di un array](src/min_max_array.c)
+* [Secondo valore più grande array](src/second_largest_array.c)
+* [Massimo e minimo di un array, con struct](src/min_max_array_struct.c)
+* [Selection sort](src/selection_sort.c)
 
+* [Stampa tabelline](src/tabelline.c)
+* [Somma/Prodotto matrici](src/ops_matrici.c)
+
+* [Parole intarsiate1](src/parole_intarsiate1.c)
+* [Parole intarsiate2](src/parole_intarsiate2.c)
+
+* [Scadenze](src/scadenze.c)
+
+**Vari**
+* [Gioco tris](src/tris.c)
 
 ## Lez. 05
-**Stringhe, array, struct, typedef**
-<!-- * [Parole intarsiate](src/parole_intarsiate.c) -->
-<!-- * [Parole intarsiate2](src/parole_intarsiate2.c) -->
+**Array mono/multi-dimensionali, stringhe, struct typedef**
+<!-- * [Insertion sort](src/insertion_sort.c) -->
 <!-- * [Conteggio caratteri](src/conteggio_caratteri.c) -->
+<!-- * [Tuffi](src/tuffi.c) -->
 <!-- * [Intervallo valori](src/intervallo_valori.c) -->
 <!-- * [Moda sequenza](src/moda.c) -->
 <!-- * [Anagrammi](src/anagrammi.c) -->
+<!-- * [Stringhe libreria](src/stringhe-libreria.c) -->
+<!-- * [Cerniera](src/cerniera.c) -->
+<!-- * [Puntatori e const](src/pointers_const.c) -->
+<!-- * [Plane manager](src/plane_manager_stack.c) -->
+<!-- * [Fight game](src/fight_game.c) -->
+
+**Stringhe**
+**struct e typedef**
 
 ## Lez. 06
 **Funzioni**
 <!-- * [MacLaurin](src/maclaurin.c) -->
 <!-- * [Quadrato vettore](src/quadrato-vettore.c) -->
 <!-- * [Parole hertziane](src/hertziane.c) -->
-<!-- **Struct** -->
-<!-- * [Scadenze](src/scadenze.c) -->
-<!-- * [Puntatori e const](src/pointers_const.c) -->
-<!-- * [Fight game](src/fight_game.c) -->
-<!-- a -->
-<!-- * [Stringhe libreria](src/stringhe-libreria.c) -->
-<!-- * [Cerniera](src/cerniera.c) -->
-<!-- * [Plane manager](src/plane_manager_stack.c) -->
-<!-- <\!-- * [Tuffi](src/tuffi.c) -\-> -->
 
 ## Lez. 07
 **File**

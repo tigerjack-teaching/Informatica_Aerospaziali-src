@@ -1,4 +1,6 @@
 /*
+ * TAGS: array, sort
+ *
  * Implementare un programma che preso un vettore di interi, ordini i suoi
  * elementi in ordine crescente, utilizzando la tecnica del bubble sort.
  */

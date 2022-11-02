@@ -1,17 +1,23 @@
+/*
+ * Implementare un programma in linguaggio C che:
+ * elenca tutte le coppie di numeri affiatati, diversi tra loro, composti di
+ * due cifre
+ */
 #include <stdio.h>
 
 int main() {
   int i, j, somma, prodotto;
   int unita1, unita2, decine1, decine2;
 
-  // La struttura principale della soluzione è composta da un doppio
-  // ciclo di iterazione. L'idea è quella di avere due variabili i e j,
-  // che iterano su tutti i valori possibili a due cifre decimali
-  // (quindi tra 0 e 99 compresi), e ad ogni iterazione controlla il
-  // criterio per i numeri affiatati. Notare che la variabile j ad ogni
-  // iterazione del ciclo esterno, viene inizializzata al valore di "i",
-  // e non a 0. Questo per non effettuare il doppio confronto (se ho già
-  // controllato 2 e 5, sarà inutile controllare 5 e 2).
+  /* La struttura principale della soluzione è composta da un doppio
+   * ciclo di iterazione. L'idea è quella di avere due variabili i e j,
+   * che iterano su tutti i valori possibili a due cifre decimali
+   * (quindi tra 0 e 99 compresi), e ad ogni iterazione controlla il
+   * criterio per i numeri affiatati. Notare che la variabile j ad ogni
+   * iterazione del ciclo esterno, viene inizializzata al valore di "i",
+   * e non a 0. Questo per non effettuare il doppio confronto (se ho già
+   * controllato 2 e 5, sarà inutile controllare 5 e 2).
+   */
   for (i = 0; i < 100; i++) {
     for (j = i; j < 100; j++) {
 
@@ -37,6 +43,7 @@ int main() {
 
       // Questa versione commentata, sebbene più compatta non tiene in conto
       // i numeri a singola cifra.
+
       // prodotto = (i % 10) * (i / 10 % 10) * (j % 10) * (j / 10 % 10);
 
       // Calcolo del prodotto usando le variabili intermedie calcolate

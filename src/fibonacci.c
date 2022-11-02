@@ -1,3 +1,7 @@
+/*
+ * Scrivere un programma che dato in input un numero intero N > 0, stampi i
+ * primi N numeri di fibonacci
+ */
 #include <stdio.h>
 #include <stdlib.h>
 

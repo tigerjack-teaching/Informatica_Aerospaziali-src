@@ -5,28 +5,22 @@
  * ogni numero, e di allineare verticalmente le varie linee delle tabelline.
  */
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
   // Utilizziamo due variabili contatore per contenere il moltiplicando e il
   // moltiplicatore.
-  int i = 1;
-  int j = 1;
+  int i, j;
 
-  while (i <= 10) {
-    j = 1;
-
+  for (i = 1; i <= 10; i++) {
     // Stampiamo il nome della tabellina.
     printf("Tabellina del %.2d:", i);
-    while (j <= 10) {
+    for (j = 1; j <= 10; j++) {
       // Stampiamo i numeri componenti la tabellina.
       printf(" %3d", i * j);
-      j++;
     }
 
     // Andiamo a capo alla fine di ogni tabellina di un
     // numero.
     printf("\n");
-    i++;
   }
 }
