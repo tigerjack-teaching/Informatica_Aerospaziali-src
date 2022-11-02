@@ -82,7 +82,7 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 * [Selection sort](src/selection_sort.c)
 
 * [Stampa tabelline](src/tabelline.c)
-* [Somma/Prodotto matrici](src/ops_matrici.c)
+* [Operazioni matrici](src/ops_matrici.c)
 
 * [Parole intarsiate1](src/parole_intarsiate1.c)
 * [Parole intarsiate2](src/parole_intarsiate2.c)
@@ -91,6 +91,7 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 
 **Vari**
 * [Gioco tris](src/tris.c)
+* [Sizeof array](src/array_size.c)
 
 ## Lez. 05
 **Array mono/multi-dimensionali, stringhe, struct typedef**

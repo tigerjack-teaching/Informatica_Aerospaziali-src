@@ -1,3 +1,6 @@
+/*
+ * TAGS: multid-array
+ */
 #include <stdio.h>
 
 #define SIZE 3 // Size of the matrix
@@ -7,9 +10,17 @@ int main() {
       {0, 1, 2},
       {3, 4, 5},
       {6, 7, 8},
-  };                 // Matrice 1 inizializzata
-  int B[SIZE][SIZE]; // Matrice 2
-  int C[SIZE][SIZE]; // Matrice somma
+  }; // Matrice 1 inizializzata
+  // Altri modi di inizializzare la stessa matrice
+  /* int A[][SIZE] = { */
+  /*     {0, 1, 2}, */
+  /*     {3, 4, 5}, */
+  /*     {6, 7, 8}, */
+  /* }; // Matrice 1 inizializzata */
+  /* int A[SIZE][SIZE] = {0, 1, 2, 3, 4, 5, 6, 7, 8}; // Matrice 1 inizializzata
+   */
+  int B[SIZE][SIZE];                               // Matrice 2
+  int C[SIZE][SIZE];                               // Matrice somma
 
   int row, col;
 
