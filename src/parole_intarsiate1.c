@@ -24,30 +24,35 @@
 #include <string.h>
 
 #define MAX_LENGTH 20
-#define FORMAT_STRING "%20s" // forza scanf ad acquisire sempre al piu' 20 char
+/* forza scanf ad acquisire sempre al piu' 20 char */
+#define FORMAT_STRING "%20s"
 
 int main() {
   char str1[MAX_LENGTH + 1] = {'\0'}, str2[MAX_LENGTH + 1] = {'\0'};
-  int c;
+  char c;        /*  */
+  int k,         /* for loop variable */
+      n2,        /* var. per la lunghezza della seconda parola.*/
+      foundChar, /* var. booleana indicatrice della condizione di aver
+                    individuato un carattere nella seconda
+                    parola.*/
+      pos;       /* var. per tener traccia della posizione nella 2nda
+                    parola dove e' stato trovato un carattere.*/
 
   printf("\n Prima parola (con al piu' %d caratteri) str1: ", MAX_LENGTH);
   scanf(FORMAT_STRING, str1);
   do {
+    /* consuma eventuali char oltre il 20-esimo rimasti sul nastro della */
+    /* tastiera */
     c = getchar();
-  } while (c != EOF && c != '\n'); // consuma eventuali char oltre il
-                                   // 20-esimo rimasti sul nastro della
-                                   // tastiera
+  } while (c != EOF && c != '\n');
+
   printf("\n Seconda parola (con al piu' %d caratteri) str2: ", MAX_LENGTH);
   scanf(FORMAT_STRING, str2);
   while ((c = getchar()) != EOF && c != '\n')
     ;
-  int n2 = strlen(str2), // var. per la lunghezza della seconda parola.
-      foundChar,         // var. booleana indicatrice della condizione di aver
-                         //      individuato un carattere nella seconda parola.
-      pos;               // var. per tener traccia della posizione nella 2nda
-                         //      parola dove e' stato trovato un carattere.
+  n2 = strlen(str2);
   foundChar = 0;
-  for (int k = 0; k < n2 && foundChar == 0; ++k) {
+  for (k = 0; k < n2 && foundChar == 0; ++k) {
     if (str2[k] == str1[0]) {
       foundChar = 1;
       pos = k;

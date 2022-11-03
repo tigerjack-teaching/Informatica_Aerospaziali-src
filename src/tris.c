@@ -8,6 +8,9 @@ int main() {
 
   int i, j;
 
+  int somma_X_diag = 0, somma_O_diag = 0;
+  int somma_X_diag_2 = 0, somma_O_diag_2 = 0;
+
   /* Stampiamo lo stato del tris. */
   for (i = 0; i < 3; i++) {
     for (j = 0; j < 3; j++) {
@@ -15,9 +18,6 @@ int main() {
     }
     printf("\n");
   }
-
-  int somma_X_diag = 0, somma_O_diag = 0;
-  int somma_X_diag_2 = 0, somma_O_diag_2 = 0;
 
   for (i = 0; i < 3; i++) {
     int somma_X_riga = 0, somma_O_riga = 0;

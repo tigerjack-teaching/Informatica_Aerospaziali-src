@@ -28,7 +28,8 @@ int main() {
   int i, j, n, min, temp;
   int V[LUN_MAX];
 
-  // Acquisiamo un intero n, che rappresenta il numero di elementi da acquisire.
+  /* Acquisiamo un intero n, che rappresenta il numero di elementi da
+     acquisire. */
   do {
     printf("\nInserisci il numeri di elementi da acquisire (max %d)", LUN_MAX);
     scanf("%d", &n);
@@ -41,7 +42,8 @@ int main() {
   }
 
   for (i = 0; i < n - 1; i++) {
-    min = i; // posizione del minimo
+    /* posizione del minimo */
+    min = i; 
     for (j = i + 1; j < n; j++)
       if (V[j] < V[min])
         min = j;

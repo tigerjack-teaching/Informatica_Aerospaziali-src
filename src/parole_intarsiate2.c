@@ -22,39 +22,47 @@
 #include <string.h>
 
 #define MAX_LENGTH 20
-// forza la scanf ad acquisire sempre al piu' 20 char
+/* forza scanf ad acquisire sempre al piu' 20 char */
 #define FORMAT_STRING "%20s"
 
-typedef char stringa_t [MAX_LENGTH + 1];
+typedef char stringa_t[MAX_LENGTH + 1];
 
 int main() {
   stringa_t str1, str2;
-  char c;
+  char c;        /*  */
+  int k,         /* for loop variable */
+      n1,        /* var. per la lunghezza della prima parola.*/
+      n2,        /* var. per la lunghezza della seconda parola.*/
+      foundChar, /* var. booleana indicatrice della condizione di aver
+                    individuato un carattere nella seconda
+                    parola.*/
+      pos;       /* var. per tener traccia della posizione nella 2nda
+                    parola dove e' stato trovato un carattere.*/
   printf("\n Prima parola (con al piu' %d caratteri) str1: ", MAX_LENGTH);
   scanf(FORMAT_STRING, str1);
   do {
+    /* consuma eventuali char oltre il 20-esimo rimasti sul nastro della */
+    /* tastiera */
     c = getchar();
-  } while (c != EOF && c != '\n'); // consuma eventuali char oltre il
-                                   // 20-esimo rimasti sul nastro della
-                                   // tastiera
+  } while (c != EOF && c != '\n');
+
   printf("\n Seconda parola (con al piu' %d caratteri) str2: ", MAX_LENGTH);
   scanf(FORMAT_STRING, str2);
   while ((c = getchar()) != EOF && c != '\n')
     ;
 
-  int n1 = strlen(str1); // var. per la lunghezza della seconda parola.
-  int n2 = strlen(str2); // var. per la lunghezza della seconda parola.
+  n1 = strlen(str1);
+  n2 = strlen(str2);
   printf("Parola 1: %s, Parola 2: %s", str1, str2);
 
   if (n1 > n2) {
-    // se la condizione e' vera, str1 ovviamente non puo' essere intarsiata in
-    // str2
-    printf("\n Non intarsiate, n1 piu' lunga di n2");
+    /* se la condizione e' vera, str1 ovviamente non puo' essere intarsiata in */
+    /* str2 */
+    printf("\n Non intarsiate, str1 piu' lunga di str2");
     return 0;
   }
 
-  int pos = 0;
-  int k;
+  pos = 0;
   for (k = 0; k < n2 && pos < n1; ++k)
     if (str2[k] == str1[pos])
       pos += 1;

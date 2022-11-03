@@ -17,12 +17,12 @@ struct Coppia {
 
 int main(int argc, char *argv[]) {
   int numbers[SIZE] = {5, 1, 6, 10, 2, 3, 6, 50, -7, 4};
+  int i;
 
   struct Coppia minmax;
   minmax.min = INT_MAX;
   minmax.max = INT_MIN;
 
-  int i;
   for (i = 0; i < SIZE; i++) {
     if (numbers[i] > minmax.max) {
       minmax.max = numbers[i];

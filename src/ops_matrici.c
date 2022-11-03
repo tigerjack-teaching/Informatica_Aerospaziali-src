@@ -2,25 +2,25 @@
  * TAGS: multid-array
  */
 #include <stdio.h>
-
-#define SIZE 3 // Size of the matrix
+/* Size of the matrix */
+#define SIZE 3
 
 int main() {
   int A[SIZE][SIZE] = {
       {0, 1, 2},
       {3, 4, 5},
       {6, 7, 8},
-  }; // Matrice 1 inizializzata
-  // Altri modi di inizializzare la stessa matrice
-  /* int A[][SIZE] = { */
-  /*     {0, 1, 2}, */
-  /*     {3, 4, 5}, */
-  /*     {6, 7, 8}, */
-  /* }; // Matrice 1 inizializzata */
-  /* int A[SIZE][SIZE] = {0, 1, 2, 3, 4, 5, 6, 7, 8}; // Matrice 1 inizializzata
+  };
+  /* Altri modi di inizializzare la stessa matrice */
+  /* int A[][SIZE] = {
+         {0, 1, 2},
+         {3, 4, 5},
+         {6, 7, 8},
+   };/*
+  /* int A[SIZE][SIZE] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
    */
-  int B[SIZE][SIZE];                               // Matrice 2
-  int C[SIZE][SIZE];                               // Matrice somma
+  int B[SIZE][SIZE]; 
+  int C[SIZE][SIZE]; 
 
   int row, col;
 
@@ -65,7 +65,7 @@ int main() {
   }
 
   printf("\nMoltiplicazione delle matrici A*B = \n");
-  // N.B.: stampa senza salvare la matrice!
+  /* N.B.: stampa senza salvare la matrice! */
   for (row = 0; row < SIZE; row++) {
     for (col = 0; col < SIZE; col++) {
       int somma = 0;
