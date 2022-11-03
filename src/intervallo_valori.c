@@ -2,8 +2,10 @@
 #define LUN_MAX 100
 int main() {
   int v[LUN_MAX], i, n, k;
+  int intervallo;
+  int min, max;
 
-  // Acquisiamo un intero n, che rappresenta il numero di elementi da acquisire.
+  /* Acquisiamo un intero n, che rappresenta il numero di elementi da acquisire. */
   do {
     printf("\nInserisci il numeri di elementi da acquisire (max %d)", LUN_MAX);
     scanf("%d", &n);
@@ -15,14 +17,14 @@ int main() {
     scanf("%d", &v[i]);
   }
   /* ... ometto codice lettura vettore ... */
-  int min = v[0], max = v[0];
+  min = v[0], max = v[0];
   for (i = 1; i < n; i++) {
     if (min > v[i])
       min = v[i];
     if (max < v[i])
       max = v[i];
   }
-  int intervallo = 1; // uso una variabile indicatrice
+  intervallo = 1;
   for (k = min + 1; k < max && intervallo == 1; k++) {
     for (i = 0; i < n && v[i] != k; i++)
       ;

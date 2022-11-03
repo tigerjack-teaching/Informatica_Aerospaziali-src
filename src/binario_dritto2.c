@@ -3,15 +3,15 @@
 int main(int argc, char *argv[]) {
 
   int N;
-
-  // Acquisizione dell'input.
+  int b = 0;
+  int Naux = N;
+  int pos_val;
+  /* Acquisizione dell'input. */
   do {
     printf("Inserisci un intero positivo\n");
     scanf("%u", &N);
   } while (N <= 0);
 
-  int b = 0;
-  int Naux = N;
   while (Naux > 0) {
     Naux /= 2;
     b += 1;
@@ -19,12 +19,11 @@ int main(int argc, char *argv[]) {
   printf("Numero di bit necessari per rappresentare %d: %d\n", N, b);
   printf("La codifica è: ");
 
-  // L'esponente maggiore
+  /* L'esponente maggiore */
   /* unsigned exp = b-1; */
-  int pos_val;
   do {
     b -= 1;
-    // E' equivalente a 2^b
+    /* E' equivalente a 2^b */
     pos_val = 1 << b;
 
     if (N > 0 && N - pos_val >= 0) {

@@ -12,9 +12,11 @@ gcc -o <nome_eseguibile> <nome_file>.c
 dove ``<nome_eseguibile>`` è il nome dell'eseguibile (scelto a piacere, a.out di
 default) e ``<nome_file>.c`` è il nome del file sorgente.
 
+Nel nostro corso, aderiamo all'ANSI C, ragion per cui aggiungiamo due altri flag in fase di compilazione: `-ansi` e `-pedantic`.
+
 Example
 ```bash
-gcc -o somma.out somma.c
+gcc -ansi -pedantic -o somma.out somma.c
 ```
 
 Per eseguire, su Linux ``./<nome_eseguibile>``

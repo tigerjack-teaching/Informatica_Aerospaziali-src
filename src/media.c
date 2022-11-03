@@ -1,6 +1,9 @@
+/*
+ * TAGS: float
+ *
+ * TODO classe. Prova con input 11.6 e 7.3. Cosa succede nell'output?
+ */
 #include <stdio.h>
-// Prova con input 11.6 e 7.3. Cosa succede nell'output?
-
 int main(int argc, char *argv[]) {
   float A, B, Y;
   printf("Inserisci A\n");

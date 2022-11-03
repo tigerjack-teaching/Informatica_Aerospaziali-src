@@ -1,6 +1,7 @@
 /*
- * Trovare il massimo e il minimo tra tre numeri. Come fare il check su rette
- * parallele?
+ * Trovare il massimo e il minimo tra tre numeri.
+ *
+ * TODO Casa. Come fare il check su rette parallele?
  */
 #include <stdio.h>
 
@@ -17,21 +18,21 @@ int main(int argc, char *argv[]) {
     if (y < z) {
       printf("\nmin = %f", x);
       printf("\nmax = %f", z);
-    } else { // x<y, y>=z
+    } else { /* x<y, y>=z */
       if (x < z) {
         printf("\nmin = %f", x);
         printf("\nmax = %f", y);
       }
-      else { // x<y, y>=z, x>=z
+      else { /* x<y, y>=z, x>=z*/
         printf("\nmin = %f", z);
         printf("\nmax = %f", y);
       }
     }
-  } else { // x >= y
+  } else { /* x >= y */
     if (y > z) {
       printf("\nmin = %f", z);
       printf("\nmax = %f", x);
-    } else { // x >= y, y <= z
+    } else { /* x >= y, y <= z*/
       if (x < z) {
         printf("\nmin = %f", y);
         printf("\nmax = %f", z);

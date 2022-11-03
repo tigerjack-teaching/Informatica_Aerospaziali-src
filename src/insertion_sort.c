@@ -5,7 +5,8 @@ int main() {
   int i, j, n;
   int V[LUN_MAX];
 
-  // Acquisiamo un intero n, che rappresenta il numero di elementi da acquisire.
+  /* Acquisiamo un intero n, che rappresenta il numero di elementi da
+     acquisire. */
   do {
     printf("\nInserisci il numeri di elementi da acquisire (max %d)", LUN_MAX);
     scanf("%d", &n);

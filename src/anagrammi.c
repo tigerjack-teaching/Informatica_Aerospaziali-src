@@ -2,33 +2,33 @@
 #define CARATTERI_ASCII 256
 #define MAX_LUNG 100
 
-// La funzione di supporto.
+/* La funzione di supporto. */
 int anagramma(char *str1, char *str2) {
-  // Creiamo gli array contatori, dove memorizzeremo in ognuna delle
-  // 256 posizioni, il numero di occorrenze dell'n-esimo carattere
-  // (e useremo come indice, proprio il valore da 0 a 255 del carattere
-  //  inteso come numerazione dei caratteri ASCII).
+  /* Creiamo gli array contatori, dove memorizzeremo in ognuna delle */
+  /* 256 posizioni, il numero di occorrenze dell'n-esimo carattere */
+  /* (e useremo come indice, proprio il valore da 0 a 255 del carattere */
+  /*  inteso come numerazione dei caratteri ASCII). */
   int contatore1[CARATTERI_ASCII] = {0};
   int contatore2[CARATTERI_ASCII] = {0};
   int i;
 
-  // Scorriamo le due stringhe, e per ogni carattere che troviamo,
-  // aumentiamo nel corrispondente array contatore il valore che indica
-  // le occorrenze di quel carattere.
+  /* Scorriamo le due stringhe, e per ogni carattere che troviamo, */
+  /* aumentiamo nel corrispondente array contatore il valore che indica */
+  /* le occorrenze di quel carattere. */
   for (i = 0; *(str1 + i) && *(str2 + i); i++) {
     contatore1[*(str1 + i)]++;
     contatore2[*(str2 + i)]++;
   }
 
-  // Controlliamo se le due stringhe sono di diversa lunghezza. Se
-  // lo sono, sicuramente le stringhe non saranno anagrammi.
+  /* Controlliamo se le due stringhe sono di diversa lunghezza. Se */
+  /* lo sono, sicuramente le stringhe non saranno anagrammi. */
   if (*(str1 + i) || *(str2 + i))
     return 0;
 
-  // Controlliamo i valori che abbiamo salvato negli array contatori
-  // corrispondono. Se corrispondono, significa che le parole sono
-  // anagrammi. Se anche solo una delle celle degli array contatori
-  // non corrispondono, allora le parole non sono anagrammi.
+  /* Controlliamo i valori che abbiamo salvato negli array contatori */
+  /* corrispondono. Se corrispondono, significa che le parole sono */
+  /* anagrammi. Se anche solo una delle celle degli array contatori */
+  /* non corrispondono, allora le parole non sono anagrammi. */
   for (i = 0; i < CARATTERI_ASCII; i++)
     if (contatore1[i] != contatore2[i])
       return 0;
@@ -37,12 +37,11 @@ int anagramma(char *str1, char *str2) {
 }
 
 int main() {
-  // Le stringhe potenzialmente anagrammi.
+  /* Le stringhe potenzialmente anagrammi. */
   char str1[MAX_LUNG] = "prese";
   char str2[MAX_LUNG] = "serpe";
 
-  // Chiamamiamo la funzione anagramma, che restituirà `1` se le parole
-  // sono anagrammi, o `0` se non lo sono.
+  /* Chiamamiamo la funzione anagramma, che restituirà `1` se le parole sono anagrammi, o `0` se non lo sono. */
   if (anagramma(str1, str2))
     printf("Le stringhe sono anagrammi.\n");
   else
