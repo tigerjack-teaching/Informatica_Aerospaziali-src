@@ -93,30 +93,33 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 
 **Vari**
 * [Gioco tris](src/tris.c)
-* [Sizeof array](src/array_size.c)
+* [Sizeof array](src/array_size.c**
 
 ## Lez. 05
+**Recap**
+* [Stringhe](src/str_ex.c)
+* [String smashing](src/string_smashing.c)
+
 **Array mono/multi-dimensionali, stringhe, struct typedef**
-<!-- * [Insertion sort](src/insertion_sort.c) -->
-<!-- * [Conteggio caratteri](src/conteggio_caratteri.c) -->
+* [Insertion sort](src/insertion_sort.c)
+* [Grado parola](src/grado_parola.c)
+* [Intervallo valori](src/intervallo_valori.c)
+* [Moda sequenza](src/moda.c)
+* [Pseudo-social](src/social.c)
+* [Pseudo-social](src/social2.c)
+* [Anagrammi](src/anagrammi_wout_functions.c)
+
+
+## Lez. 06
+**Funzioni**
 <!-- * [Tuffi](src/tuffi.c) -->
-<!-- * [Intervallo valori](src/intervallo_valori.c) -->
-<!-- * [Moda sequenza](src/moda.c) -->
-<!-- * [Anagrammi](src/anagrammi.c) -->
-<!-- * [Stringhe libreria](src/stringhe-libreria.c) -->
+<!-- * [MacLaurin](src/maclaurin.c) -->
+<!-- * [Quadrato vettore](src/quadrato-vettore.c) -->
+<!-- * [Parole hertziane](src/hertziane.c) -->
 <!-- * [Cerniera](src/cerniera.c) -->
 <!-- * [Puntatori e const](src/pointers_const.c) -->
 <!-- * [Plane manager](src/plane_manager_stack.c) -->
 <!-- * [Fight game](src/fight_game.c) -->
-
-**Stringhe**
-**struct e typedef**
-
-## Lez. 06
-**Funzioni**
-<!-- * [MacLaurin](src/maclaurin.c) -->
-<!-- * [Quadrato vettore](src/quadrato-vettore.c) -->
-<!-- * [Parole hertziane](src/hertziane.c) -->
 
 ## Lez. 07
 **File**

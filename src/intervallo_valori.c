@@ -1,3 +1,19 @@
+/*
+ * Scrivere un programma che legge un vettore di $N$ numeri interi (dove $N$
+ * rappresenta una costante definita dal programmatore) e riporta a video 1 se
+ * l’insieme rappresentato contiene valori che possono essere considerati come
+ * numeri facenti parte di un intervallo (anche se alcuni numeri sono
+ * duplicati), e 0 altrimenti.
+ *
+ *  - N = 3, V[] = {4, 5, 6}          -> 1
+ *  - N = 3, V[] = {4, 5, 5}          -> 1
+ *  - N = 5, V[] = {-2, 0, 1, -3, -1} -> 1
+ *  - N = 4, V[] = {0, 3, 0, 1}       -> 0 (manca 2)
+ *  - N = 4, V[] = {0, 3, -1, 1}      -> 0 (manca 2)
+ *
+ * TODO casa: Il problema puo' essere risolto anche utilizzando uno degli algoritmi di
+ * sorting.
+ */
 #include <stdio.h>
 #define LUN_MAX 100
 int main() {
@@ -16,7 +32,12 @@ int main() {
   for (i = 0; i < n; ++i) {
     scanf("%d", &v[i]);
   }
-  /* ... ometto codice lettura vettore ... */
+  printf("Il vettore e': [");
+  for (i = 0; i < n; i++) {
+    printf("%d", v[i]);
+  }
+  printf("]\n");
+
   min = v[0], max = v[0];
   for (i = 1; i < n; i++) {
     if (min > v[i])

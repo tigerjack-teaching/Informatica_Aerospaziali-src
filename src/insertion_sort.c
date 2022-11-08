@@ -1,3 +1,9 @@
+/*
+ * TAGS: array, sort
+ *
+ * Implementare un programma che preso un vettore di interi, ordini i suoi
+ * elementi in ordine crescente, utilizzando la tecnica dell'insertion sort.
+ */
 #include <stdio.h>
 #define LUN_MAX 100
 
@@ -12,7 +18,7 @@ int main() {
     scanf("%d", &n);
   } while ((n <= 0) || (n > LUN_MAX));
 
-  /* Acquisimo gli elementi del vettore da ordinare. */
+  /* Acquisiamo gli elementi del vettore da ordinare. */
   printf("\nInserisci gli elementi del vettore: ");
   for (i = 0; i < n; ++i) {
     scanf("%d", &V[i]);
@@ -20,8 +26,7 @@ int main() {
 
   for (i = 1; i < n; i++) {
     int temp = V[i];
-    j = i - 1;
-    while (j >= 0 && temp <= V[j]) {
+    for (j = i - 1; j >= 0 && temp <= V[j]; j++) {
       V[j + 1] = V[j];
       j = j - 1;
     }
