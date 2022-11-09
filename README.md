@@ -109,6 +109,7 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 * [Pseudo-social](src/social2.c)
 * [Cartesiano](src/cartesiano.c)
 * [Anagrammi](src/anagrammi_wout_functions.c)
+* [Stringhe invertite](src/str_inverse.c)
 
 
 ## Ese. 06
@@ -179,6 +180,7 @@ Lista incrementale: ogni sottosezione presuppone la conoscenza della sezione pre
 * [Stringhe](src/str_ex.c)
 * [String smashing](src/string_smashing.c)
 * [Anagrammi](src/anagrammi_wout_functions.c)
+* [Stringhe invertite](src/str_inverse.c)
 
 ## Struct e typedef
 * [Massimo e minimo di un array, con struct](src/min_max_array_struct.c)
@@ -187,21 +189,28 @@ Lista incrementale: ogni sottosezione presuppone la conoscenza della sezione pre
 * [Pseudo-social](src/social2.c)
 * [Cartesiano](src/cartesiano.c)
 
-## Funzioni
-* [Anagrammi](src/anagrammi.c)
-* [Cerniera](src/cerniera.c)
-* [Parole hertziane](src/hertziane.c)
-* [Stringhe libreria](src/stringhe-libreria.c)
-* [Quadrato vettore](src/quadrato-vettore.c)
-* [MacLaurin](src/maclaurin.c)
+<!-- ## Funzioni -->
+<!-- * [Anagrammi](src/anagrammi.c) -->
+<!-- * [Cerniera](src/cerniera.c) -->
+<!-- * [Parole hertziane](src/hertziane.c) -->
+<!-- * [Stringhe libreria](src/stringhe-libreria.c) -->
+<!-- * [Quadrato vettore](src/quadrato-vettore.c) -->
+<!-- * [MacLaurin](src/maclaurin.c) -->
 
-### + Struct
-* [Tuffi](src/tuffi.c)
-* [Fight game](src/fight_game.c)
-* [Plane manager](src/plane_manager_stack.c)
-* [Plane manager](src/plane_manager_heap.c)
+<!-- ### + Struct -->
+<!-- * [Tuffi](src/tuffi.c) -->
+<!-- * [Fight game](src/fight_game.c) -->
+<!-- * [Plane manager](src/plane_manager_stack.c) -->
+<!-- * [Plane manager](src/plane_manager_heap.c) -->
+<!-- * [Lotteria](src/lotteria.c) -->
+<!-- * [Lista](src/lista.c) -->
+<!-- * [Albero](src/tree.c) -->
 
 <!-- ## File -->
+<!-- * [Cifrario](src/cesare.c) -->
+<!-- * [Banca](src/banca_estratto.c) -->
+<!-- * [Word count](src/wc.c) -->
+<!-- * [PIL](src/pil.c) -->
 
 <!-- ## Puntatori -->
 <!-- * [Stringhe libreria](src/stringhe_libreria_pointers.c) -->
