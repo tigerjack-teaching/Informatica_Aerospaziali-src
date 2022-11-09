@@ -1,5 +1,5 @@
 /*
- * TAGS: string
+ * TAGS: string, array
  *
  * Si progetti un programma che acquisisca due stringhe da stdin. Si assuma che
  * ciascuna stringa rappresenti una parola. Il programma deve stabilire se le
@@ -20,8 +20,15 @@ int main() {
   /* Le stringhe potenzialmente anagrammi. */
 
   /* Potenzialmente qui c'e' una scanf per chiedere le stringhe all'utente*/
-  char str1[MAX_LUNG] = "pentola";
-  char str2[MAX_LUNG] = "polenta";
+  /* char str1[MAX_LUNG] = "pentola"; */
+  /* char str2[MAX_LUNG] = "polenta"; */
+
+  char str1[MAX_LUNG + 1] = {'\0'}, str2[MAX_LUNG + 1] = {'\0'};
+  printf("\n 1ma parola: ");
+  scanf("%s", str1);
+
+  printf("\n 2da parola: ");
+  scanf("%s", str2);
 
   /* Creiamo gli array contatori, dove memorizzeremo in ognuna delle */
   /* 256 posizioni, il numero di occorrenze dell'n-esimo carattere */
