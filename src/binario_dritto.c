@@ -1,3 +1,11 @@
+/*
+ * Vedi binario inverso. In questo caso, l'output e' da leggersi, come sempre,
+ * da destra a sinistra.
+ * Esempio
+ * Q: 19 in notazione decimale
+ * In binario naturale (invertito) codificato su 5 bit
+ * Q : 10011   con 5 bit
+ */
 #include <stdio.h>
 #include <stdlib.h>
 

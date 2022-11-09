@@ -1,3 +1,13 @@
+/*
+ *
+ *  Viene definito numero triangolare, un numero costituito dalla somma dei
+ *  primi interi positivi N, per un certo N. Implementare un programma che,
+ *  letto un intero da user input, stabilisce se il numero è un numero
+ *  triangolare.
+ *
+ * Esempio
+ * Q = 10 è un numero triangolare in quanto Q = 1 + 2 + 3 + 4, da cui N=4.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 

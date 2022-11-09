@@ -1,9 +1,8 @@
 /*
  * Scrivere un programma che legge da tastiera (stdin) una sequenza di $N$
  * numeri interi, con $N$ che rappresenta una costante definita dal
- * programmatore. Dopo aver acquisito tutti i valori da \textit{stdin}, cercare
- * le coppie di numeri tali che il primo sia il doppio dell’altro e riportarle
- * su \textit{stdout}.
+ * programmatore. Dopo aver acquisito tutti i valori da stdin, cercare le coppie
+ * di numeri tali che il primo sia il doppio dell’altro e riportarle su stdout.
  */
 #include <stdio.h>
 #define N 10
