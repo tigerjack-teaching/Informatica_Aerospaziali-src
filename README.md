@@ -12,11 +12,10 @@ gcc -o <nome_eseguibile> <nome_file>.c
 dove ``<nome_eseguibile>`` è il nome dell'eseguibile (scelto a piacere, a.out di
 default) e ``<nome_file>.c`` è il nome del file sorgente.
 
-Nel nostro corso, aderiamo all'ANSI C, ragion per cui aggiungiamo due altri flag in fase di compilazione: `-ansi` e `-pedantic`.
-
-Example
-```bash
-gcc -ansi -pedantic -o somma.out somma.c
+<!-- Nel nostro corso, aderiamo all'ANSI C, ragion per cui aggiungiamo due altri flag in fase di compilazione: `-ansi` e `-pedantic`. -->
+<!-- Example -->
+<!-- ```bash -->
+<!-- gcc -ansi -pedantic -o somma.out somma.c -->
 ```
 
 Per eseguire, su Linux ``./<nome_eseguibile>``
@@ -35,7 +34,7 @@ e quindi compilare il file principale (contenente il `main`), linkando il file d
 
 ```gcc somma.out libreria.o```
 
-Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html)
+Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_C_libraries.html)(in inglese).
 
 # A.Y. 2022-23
 ## Ese. 02
