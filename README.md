@@ -1,6 +1,16 @@
 # About
 Codice sorgente per il corso di Informatica per Aerospaziali.
 
+## Note corso
+L'unico aspetto del C che non usiamo è quello dei Variable Length Array (VLA).
+<!-- In altre parole, non ammettiamo il seguente codice -->
+<!-- ```c -->
+<!-- int x;  -->
+<!-- scanf("%d", &x);  -->
+<!-- int vett[x]; -->
+<!-- ```  -->
+
+
 # Istruzioni
 ## Compilazione ed esecuzione ##
 Per compilare i file eseguire
@@ -114,17 +124,30 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 
 ## Ese. 06
 **Funzioni**
-<!-- * [Tuffi](src/tuffi.c) -->
-<!-- * [MacLaurin](src/maclaurin.c) -->
-<!-- * [Quadrato vettore](src/quadrato-vettore.c) -->
-<!-- * [Parole hertziane](src/hertziane.c) -->
-<!-- * [Cerniera](src/cerniera.c) -->
-<!-- * [Puntatori e const](src/pointers_const.c) -->
-<!-- * [Plane manager](src/plane_manager_stack.c) -->
-<!-- * [Fight game](src/fight_game.c) -->
+* [MacLaurin](src/maclaurin.c)
+* [Quadrato vettore](src/quadrato-vettore.c)
+* [Puntatori e const](src/pointers_const.c)
+* [Stringhe libreria](src/stringhe_libreria_pointers.c)
+* [Parole hertziane](src/hertziane.c)
+* [Anagrammi3](src/anagrammi3.c)
+* [Cerniera](src/cerniera.c)
+
+**Vari**
+* [Plane manager](src/plane_manager_stack.c)
+* [Tuffi](src/tuffi.c)
+* [Fight game](src/fight_game.c)
 
 ## Ese. 07
-**File**
+**Malloc e file**
+<!-- * [Lotteria](src/lotteria.c) -->
+<!-- * [Plane manager](src/plane_manager_heap.c) -->
+<!-- * [Lista](src/lista.c) -->
+<!-- * [Words count](src/wc.c) -->
+<!-- * [Cesare](src/cesare.c) -->
+<!-- * [Banca](src/banca.c) -->
+<!-- * [Banca](src/gis.c) -->
+
+
 
 # Per categoria
 Lista incrementale: ogni sottosezione presuppone la conoscenza della sezione precedente

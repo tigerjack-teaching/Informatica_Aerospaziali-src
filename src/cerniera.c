@@ -1,3 +1,15 @@
+/*
+ * TAGS: functions
+ *
+ * In enigmistica la cerniera è uno schema per cui, date due parole, si ottiene
+ * una terza parola scartando il medesimo gruppo di lettere (e nel medesimo
+ * ordine) dalla testa (prefisso) della prima parola e dalla coda (suffisso)
+ * della seconda parola, unendo infine i caratteri rimasti ordinatamente nella
+ * prima e nella seconda
+ *
+ * ES. Date ABCDEF e GHABC, scartando ABC da entrambe otteniamo la loro cerniera
+ *  DEFGH
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,14 +35,15 @@ int main() {
     printf("\n La cerniera e' la stringa vuota! \n");
   } else {
     printf("\n La cerniera e': ");
-    for (int i = lung; i < strlen(primaParola); i++)
+    int i;
+    for (i = lung; i < strlen(primaParola); i++)
       printf("%c", primaParola[i]);
-    for (int i = 0; i < strlen(secondaParola) - lung; i++)
+    for (i = 0; i < strlen(secondaParola) - lung; i++)
       printf("%c", secondaParola[i]);
     printf("\n");
   }
   return 0;
-} // end main
+}
 
 int cercaIndice(char c, char str[]) {
   int idx = strlen(str) - 1;
@@ -38,25 +51,28 @@ int cercaIndice(char c, char str[]) {
     idx = idx - 1;
   }
   return idx;
-} // end cercaIndice
+}
 
-// Assumendo di fare la cerniera considerando
-// prefissi e suffissi SENZA ripetizioni di caratteri.
+/*
+ * Assumendo di fare la cerniera considerando prefissi e suffissi SENZA
+ * ripetizioni di caratteri.
+ */
 int cerniera(char prima[], char seconda[]) {
   int idxSuffisso = cercaIndice(prima[0], seconda);
   if (idxSuffisso < 0)
     return -1;
   int lung = strlen(seconda) - idxSuffisso;
   int flag = 1;
-  for (int i = 1; i < lung && flag == 1; i++)
+  int i;
+  for (i = 1; i < lung && flag == 1; i++)
     if (prima[i] != seconda[idxSuffisso + i])
       flag = 0;
   if (flag == 0)
     return -1;
   return lung;
-} // end cerniera
+}
 
-// Soluzione generale (NON RICHIESTA)– senza far uso di ...cercaIndice(...)
+/* Soluzione generale (NON RICHIESTA)– senza far uso di ...cercaIndice(...) */
 int cerniera2(char prima[], char seconda[]) {
   int idxSeconda = strlen(seconda) - 1;
   if (idxSeconda < 0)
@@ -65,7 +81,8 @@ int cerniera2(char prima[], char seconda[]) {
   riconoscimento_iniziato_su_prima = idxPrima = strlen(prima) - 1;
   while (idxPrima >= 0 && idxSeconda >= 0) {
     if (prima[idxPrima] == seconda[idxSeconda]) {
-      if (lung == 0) // fase di inizio riconoscimento
+      /* fase di inizio riconoscimento */
+      if (lung == 0) 
         riconoscimento_iniziato_su_prima = idxPrima;
       lung++;
       idxPrima--;
@@ -75,10 +92,10 @@ int cerniera2(char prima[], char seconda[]) {
       idxPrima = riconoscimento_iniziato_su_prima - 1;
       riconoscimento_iniziato_su_prima = idxPrima;
       lung = 0;
-    } // end 1mo-if-else
-  }   // end while
+    }
+  }
   if (lung == 0)
     return -1;
   else
     return lung;
-} // end cerniera
+}
