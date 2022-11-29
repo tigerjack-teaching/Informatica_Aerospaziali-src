@@ -16,7 +16,6 @@
 
 /* Funzione di supporto. Restituisce:
  * - 0 se le parole non sono hertziane,
- * - 0 se le parole non sono hertziane,
  * - 1 se le parole sono direttamente hertziane
  * - 2 se le parolo sono inversamente hertziane
  * - 3 se sono sia direttamente che inversamente hertziane

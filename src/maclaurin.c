@@ -16,7 +16,7 @@
  * corpo delle funzioni, pur permettendo di chiamarle nella funzione `ex`.
 */
 unsigned potenza(unsigned, unsigned);
-unsigned int fattoriale(unsigned);
+unsigned fattoriale(unsigned);
 
 /* Funzione che calcola l'esponenziale con la serie di Maclaurin */
 float ex(unsigned x, unsigned order) {
@@ -36,7 +36,7 @@ float ex(unsigned x, unsigned order) {
 
 /* Funzione di supporto per calcolare la potenza. */
 unsigned potenza(unsigned x, unsigned int exp) {
-  unsigned prodotto = 1.0;
+  unsigned prodotto = 1;
   int i;
   for (i = 0; i < exp; i++) {
     prodotto = prodotto * x;
