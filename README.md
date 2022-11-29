@@ -123,7 +123,7 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 
 
 ## Ese. 06
-**Funzioni**
+**Funzioni e puntatori**
 * [MacLaurin](src/maclaurin.c)
 * [Quadrato vettore](src/quadrato-vettore.c)
 * [Puntatori e const](src/pointers_const.c)
