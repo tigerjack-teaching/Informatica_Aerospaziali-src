@@ -1,143 +1,77 @@
 /*
  * TAGS: struct, enum, typedef, pointer, function
  * notes: struct passed by reference
+ *
+ * Simulazione creazione areo con stack.
+ *
  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define MAX_STRING_LENGTH 20
-#define MAX_SEATS 200
+#define MAX_STRING_LENGTH 50
+#define MAX_RESERVATION 200
+#define MAX_PLANES 10
 
-// unnecessary = 0/1, but still useful for explanation
 typedef enum { FALSE = 0, TRUE = 1 } boolean;
-typedef enum { MAINTENANCE, DEPOSIT, OK } planeStatus;
+/* Stato areo */
+typedef enum { MAINTENANCE, DEPOSIT, OK } plane_status;
+/* Stato prenotazione */
+typedef enum { BOOKING, CONFIRMED, DELETED } reservation_status;
+
+typedef struct {
+  char name[MAX_STRING_LENGTH];
+  int n_seats;
+  int n_seats_available;
+  plane_status status;
+  // Array di puntatori a seat
+} plane_t;
 
 typedef struct {
   int id;
+  char plane_name[MAX_STRING_LENGTH];
+  int seat_id;
   char surname[MAX_STRING_LENGTH];
   char name[MAX_STRING_LENGTH];
-  boolean available;
-} Seat;
+  char status;
+} reservation_t;
 
-typedef struct {
-  char name[20];
-  int current_n_seats;
-  int n_seats;
-  planeStatus status;
-  Seat *seat_ptrs[MAX_SEATS];
-} Plane;
+/* NB: Gli array globali sono sempre inizializzati a 0 */
+plane_t g_planes[MAX_PLANES];
+int g_number_planes;
+reservation_t g_reservations[MAX_RESERVATION];
+unsigned g_reservation_id;
 
-Plane create_plane(const char *name, int n_seats);
-Seat create_seat();
-int add_seat_to_plane(Plane *plane, Seat *seat);
-int add_n_seats_to_plane(Plane *plane, Seat *seats, size_t n_seats);
-int insert_reservation(Plane *plane, int id, const char *name,
+plane_t create_plane(const char *name, int n_seats);
+plane_t get_plane_by_name(const char *name);
+char *get_plane_status(const plane_t *plane);
+/**/
+int insert_reservation(plane_t *plane, int seat_id, const char *name,
                        const char *surname);
-int delete_reservation(Plane *plane, int seat_id);
-int get_available_seats(const Plane *plane);
-int print_passengers_list(const Plane *plane);
-int print_seats_list(const Plane *plane);
-char *get_plane_status(Plane *plane);
+int delete_reservation(int reservation_id);
+char *get_reservation_status(const reservation_t *reservation);
+reservation_t get_reservation(char *surname, char *name);
+/**/
+int print_plane(const plane_t *plane);
+int print_reservations_by_plane(const plane_t *plane);
+int print_reservations_by_plane_name(const char *name);
+int print_reservation(reservation_t *reservation);
+int print_reservations();
 
-Plane create_plane(const char *name, int n_seats) {
-  Plane p;
-  strncpy(p.name, name,
-          strlen(name) > MAX_STRING_LENGTH ? MAX_STRING_LENGTH : strlen(name));
-  p.current_n_seats = 0;
-  p.n_seats = n_seats;
+plane_t create_plane(const char *name, int n_seats) {
+  plane_t p;
+  size_t slen =
+      strlen(name) > MAX_STRING_LENGTH ? MAX_STRING_LENGTH : strlen(name);
+  strncpy(p.name, name, slen);
+  p.name[slen] = '\0';
   p.status = MAINTENANCE;
+  p.n_seats_available = n_seats;
+  p.n_seats = n_seats;
+  g_planes[g_number_planes] = p;
+  g_number_planes++;
   return p;
 }
 
-Seat create_seat() {
-  Seat s;
-  return s;
-};
-
-int add_seat_to_plane(Plane *plane, Seat *seat) {
-  if (plane->current_n_seats == plane->n_seats)
-    return 1;
-  seat->available = TRUE;
-  seat->id = plane->current_n_seats;
-  *(plane->seat_ptrs + plane->current_n_seats) = seat;
-  plane->current_n_seats++;
-  printf("Adding seat at address %p to plane\n", seat);
-  return 0;
-}
-
-int add_n_seats_to_plane(Plane *plane, Seat *seats, size_t n_seats) {
-  int i;
-  for (i = 0; i < n_seats; ++i) {
-    add_seat_to_plane(plane, &(seats[i]));
-  }
-  return 0;
-}
-
-int get_available_seats(const Plane *plane) {
-  int counter = 0;
-  for (int i = 0; i < plane->current_n_seats; ++i) {
-    printf("Plane seats %d available %d, counter %d\n", i,
-           plane->seat_ptrs[i]->available, counter);
-    if (plane->seat_ptrs[i]->available == TRUE)
-      counter++;
-  }
-  return counter;
-}
-
-int print_passengers_list(const Plane *plane) {
-  for (int i = 0; i < plane->current_n_seats; ++i) {
-    Seat *s = plane->seat_ptrs[i];
-    if (!s->available)
-      printf("Seat %d: %s %s\n", s->id, s->surname, s->name);
-  }
-  return 0;
-}
-
-int print_seats_list(const Plane *plane) {
-  for (int i = 0; i < plane->current_n_seats; ++i) {
-    Seat *s = plane->seat_ptrs[i];
-    printf("Seat: %d", s->id);
-    if (s->available) {
-      printf("; Available\n");
-    } else {
-      printf("; reserved by %s %s\n", s->surname, s->name);
-    }
-  }
-  return 0;
-}
-
-int insert_reservation(Plane *plane, int id, const char *name,
-                       const char *surname) {
-  if (id >= plane->n_seats)
-    return 1;
-  Seat *seat = plane->seat_ptrs[id];
-  if (!seat->available)
-    return 1;
-  strncpy(seat->surname, surname,
-          strlen(surname) > MAX_STRING_LENGTH ? MAX_STRING_LENGTH
-                                              : strlen(surname));
-  strncpy(seat->name, name,
-          strlen(name) > MAX_STRING_LENGTH ? MAX_STRING_LENGTH : strlen(name));
-  seat->available = FALSE;
-  printf("Inserted reservation for seat at address %p from %s %s\n", seat,
-         surname, name);
-  return 0;
-}
-
-int delete_reservation(Plane *plane, int seat_id) {
-  printf("Deleting seat with id %d at address %p\n", seat_id,
-         &(plane->seat_ptrs[seat_id]));
-  if (seat_id >= plane->n_seats)
-    return 1;
-  if (plane->seat_ptrs[seat_id]->available)
-    return 1;
-  plane->seat_ptrs[seat_id]->available = TRUE;
-  strncpy(plane->seat_ptrs[seat_id]->name, "", 0);
-  strncpy(plane->seat_ptrs[seat_id]->surname, "", 0);
-  return 0;
-}
-
-char *get_plane_status(Plane *plane) {
+char *get_plane_status(const plane_t *plane) {
   switch (plane->status) {
   case MAINTENANCE:
     return "maintenance";
@@ -150,74 +84,153 @@ char *get_plane_status(Plane *plane) {
   }
 }
 
+plane_t get_plane_by_name(const char *name) {
+  plane_t local;
+  for (int i = 0; i < g_number_planes; i++) {
+    local = g_planes[i];
+    if (!strcmp(local.name, name)) {
+      return local;
+    }
+  }
+  return local;
+}
+
+int insert_reservation(plane_t *plane, int seat_id, const char *name,
+                       const char *surname) {
+  reservation_t reservation;
+  if (seat_id >= plane->n_seats)
+    /* Gli id dei seat sono numerati da 0 a n_seats-1, per cui un id piu' alto
+       e' un errore */
+    return 1;
+  reservation.id = g_reservation_id++;
+  size_t slen = strlen(surname) > MAX_STRING_LENGTH ? MAX_STRING_LENGTH - 1
+                                                    : strlen(surname);
+  strncpy(reservation.surname, surname, slen);
+  reservation.surname[slen] = '\0';
+
+  slen =
+      strlen(name) > MAX_STRING_LENGTH ? MAX_STRING_LENGTH - 1 : strlen(name);
+  strncpy(reservation.name, name, slen);
+  reservation.name[slen] = '\0';
+
+  slen = strlen(plane->name) > MAX_STRING_LENGTH ? MAX_STRING_LENGTH - 1
+                                                 : strlen(plane->name);
+  strncpy(reservation.plane_name, plane->name, slen);
+  reservation.plane_name[slen] = '\0';
+
+  reservation.seat_id = seat_id;
+  reservation.status = CONFIRMED;
+  plane->n_seats_available--;
+  printf("Inserted ");
+  print_reservation(&reservation);
+  g_reservations[reservation.id] = reservation;
+  return 0;
+}
+
+int delete_reservation(int reservation_id) {
+  reservation_t reservation = g_reservations[reservation_id];
+  char *plane_name = reservation.plane_name;
+  plane_t plane = get_plane_by_name(plane_name);
+  reservation.status = DELETED;
+  plane.n_seats_available++;
+  g_reservations[reservation_id] = reservation;
+  printf("Delete reservation %d\n", reservation_id);
+  return 0;
+}
+
+char *get_reservation_status(const reservation_t *reservation) {
+
+  switch (reservation->status) {
+  case CONFIRMED:
+    return "confirmed";
+  case BOOKING:
+    return "booking";
+  case DELETED:
+    return "deleted";
+  default:
+    return "WRONG";
+  }
+}
+
+reservation_t get_reservation(char *surname, char *name) {
+  reservation_t reservation;
+  for (int i = 0; i < g_reservation_id; i++) {
+    reservation = g_reservations[i];
+    if (!strcmp(reservation.surname, surname) &&
+        !(strcmp(reservation.name, name))) {
+      break;
+    }
+  }
+  return reservation;
+}
+
+int print_plane(const plane_t *plane) {
+  printf("Plane: %s, {seats: %d, seats_available: %d, status: %s}\n",
+         plane->name, plane->n_seats, plane->n_seats_available,
+         get_plane_status(plane));
+  return 0;
+}
+
+int print_reservations_by_plane_name(const char *name) {
+  for (int i = 0; i < g_reservation_id; i++) {
+    reservation_t reservation = g_reservations[i];
+    if (reservation.status == CONFIRMED &&
+        !strcmp(reservation.plane_name, name)) {
+      print_reservation(&reservation);
+    }
+  }
+  return 0;
+}
+
+int print_reservations_by_plane(const plane_t *plane) {
+  return print_reservations_by_plane_name(plane->name);
+}
+
+int print_reservation(reservation_t *reservation) {
+  printf("Reservation: {ID: %d, plane %s, seat: %d, surname: %s, name: %s, "
+         "status: %s}\n",
+         reservation->id, reservation->plane_name, reservation->seat_id,
+         reservation->surname, reservation->name,
+         get_reservation_status(reservation));
+  return 0;
+}
+
+int print_reservations() {
+  for (int i = 0; i < g_reservation_id; i++) {
+    print_reservation(&g_reservations[i]);
+  }
+  printf("\n");
+  return 0;
+}
+
 int main(int argc, char *argv[]) {
   const int n_seats = 12;
-  Plane p = create_plane("Boeing", n_seats);
-  printf("%s %lu\n", p.name, strlen(p.name));
-
-  printf("Test creating %d seats\n", n_seats);
-  Seat seats[MAX_SEATS];
-  for (int i = 0; i < n_seats; ++i) {
-    seats[i] = create_seat();
-    printf("Created seat %.2d\t internal mem adrredss %p\n", i, &seats[i]);
-  }
-  printf("****\n");
-
-  printf("Test adding %d seats in bulk\n", n_seats);
-  // Note how we pass the address, not the whole structure
-  add_n_seats_to_plane(&p, seats, n_seats);
-  printf("****\n");
-
-  int n = get_available_seats(&p);
-  printf("Available seats: %d\n", n);
-  printf("****\n");
+  plane_t p = create_plane("Boeing", n_seats);
+  print_plane(&p);
+  printf("\n****\n");
 
   int n_reservations = 5;
-  printf("Test inserting %d reservation (same name and surname)\n",
+  printf("Test inserting %d reservation\n",
          n_reservations);
   for (int i = 0; i < n_reservations; i++) {
-    int ret = insert_reservation(&p, i, "Name", "Surname");
+    char name[MAX_STRING_LENGTH], surname[MAX_STRING_LENGTH];
+    /* Salvo il risultato della stringa formattata in una stringa */
+    snprintf(name, MAX_STRING_LENGTH, "Name %d", i);
+    snprintf(surname, MAX_STRING_LENGTH, "Surname %d", i);
+    int ret_val = insert_reservation(&p, i, name, surname);
   }
-  printf("****\n");
-  printf("Test inserting another reservation for already booked sea \n");
-  int ret = insert_reservation(&p, 0, "Name", "Surname");
-  if (ret) {
-    printf("As expected, reservation could not be inserted\n");
-  }
-  else {
-    printf("Error, reservation inserted even if already present\n");
-  }
-  printf("****\n");
-
-  n = get_available_seats(&p);
-  printf("Available seats: %d\n", n);
-  printf("****\n");
-  // Passenger list
-  printf("Passengers list\n");
-  print_passengers_list(&p);
-  printf("****\n");
-  printf("Seats list\n");
-  print_seats_list(&p);
-  printf("****\n");
+  print_plane(&p);
+  print_reservations();
+  print_reservations_by_plane_name(p.name);
+  printf("\n****\n");
 
   int n_delete_reservations = 2;
   printf("Test deleting %d reservation\n", n_delete_reservations);
-  for (int i = 0; i < 2; i++) {
-    int res = delete_reservation(&p, i);
-    printf("Delete reservation %d, res = %d\n", i, res);
+  for (int i = 0; i < n_delete_reservations; i++) {
+    int res = delete_reservation(i);
   }
-  printf("****\n");
-
-  n = get_available_seats(&p);
-  printf("Available seats on plane: %d\n", n);
-  printf("****\n");
-
-  /* printf("Test print to file\n"); */
-  /* print_passengers_list(&p); */
-  /* for (int i = 0; i < 4; ++i) { */
-  /*   free((p->seats)[i]); */
-  /* } */
-  /* free(p->seats); */
+  print_reservations_by_plane_name(p.name);
+  printf("\n****\n");
 
   return 0;
 }
