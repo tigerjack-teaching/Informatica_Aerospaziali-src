@@ -1,6 +1,6 @@
 /*
- * In this, we are passing structs by values
  * TAGS: struct, typedef, function, pointer
+ *
  * NOTES: struct passed by value
  */
 #include <stdio.h>
