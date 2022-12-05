@@ -9,10 +9,9 @@
  *  La Moda è il valore più popolare della sequenza, cioé quello che compare il
  *  maggior numero di volte.
  *
- *  Potrebbe esserci più di un valore che rappresenta la Moda; stamparli tutti.
+ *  Potrebbe esserci più di un valore che rappresenta la Moda; stamparne solo
+ *  uno!
  *
- * TODO casa: Provare a pensare ad una possibile ottimizzazione nel caso in cui
- * ci interessi stampare solo un valore della moda.
  */
 #include <stdio.h>
 
@@ -21,7 +20,9 @@
 int main() {
   int num_ripetizioni[M] = {0};
   int valore;
-  int maxRipetizioni = 0;
+
+  int max_indice = 0;
+  int max_ripetizioni = num_ripetizioni[max_indice];
   int wrong_val = 0;
   int n_val = 0;
 
@@ -38,33 +39,19 @@ int main() {
 
       if (valore < 0 || valore > M) {
         wrong_val = 1;
-      }
-      else {
+      } else {
         n_val++;
         wrong_val = 0;
       }
     } while (wrong_val);
-    
-    printf("Aggiorno vettore ripetizioni\n");
     num_ripetizioni[valore - 1] += 1;
-    if (num_ripetizioni[valore - 1] > maxRipetizioni)
-      maxRipetizioni = num_ripetizioni[valore - 1];
-  } while (valore != 0);
-  printf("Con %d occorrenze il/i valore/i della moda e'/sono:", maxRipetizioni);
-  for (int i = 0; i < M; i++) {
-    if (num_ripetizioni[i] == maxRipetizioni) {
-      printf("%d ", i + 1);
+    if (num_ripetizioni[valore - 1] > max_ripetizioni) {
+      max_indice = valore - 1;
+      max_ripetizioni = num_ripetizioni[max_indice];
     }
-  }
-  printf("\n");
+  } while (valore != 0);
 
-  /* Stampa finale, non richiesta dalla traccia, ma utile ai fini della
-   * comprensione della soluzione.
-   */
-  for (int i = 0; i < M; i++) {
-    printf("%d:%d; ", i + 1, num_ripetizioni[i]);
-  }
-  printf("\n");
-
+  printf("Con %d occorrenze il valore della moda e': %d", max_ripetizioni,
+         max_indice + 1);
   return 0;
 }

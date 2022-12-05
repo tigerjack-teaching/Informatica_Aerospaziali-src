@@ -121,6 +121,9 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 * [Anagrammi2](src/anagrammi2.c)
 * [Stringhe invertite](src/str_inverse.c)
 
+**Vari**
+* [Moda sequenza (ottimizzazione)](src/moda2.c)
+
 
 ## Ese. 06
 **Funzioni e puntatori**
