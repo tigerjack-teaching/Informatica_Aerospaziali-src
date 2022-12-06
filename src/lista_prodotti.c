@@ -14,37 +14,25 @@ typedef struct nodo_prodotto_s {
   prodotto_t prodotto;
   struct nodo_prodotto_s *next;
 } nodo_prodotto_t;
-
 typedef nodo_prodotto_t *lista_prodotti_t;
 
-typedef struct nodo_float_s {
-  float valore;
-  struct nodo_float_s *next;
-} nodo_float_t;
-typedef nodo_float_t *lista_float;
+lista_prodotti_t inserisci_in_testa(lista_prodotti_t testa, prodotto_t p) {
+  /*
+   * Inserisce in testa, restituendo la testa della lista
+   */
+  lista_prodotti_t punt, cur = testa;
 
-lista_prodotti_t leggi_da_file(char *nome_file) {
-  lista_prodotti_t L = NULL;
-  FILE *fp = fopen(nome_file, "r");
-  if (!fp) {
-    fprintf(stderr, "Errore nell'apertura del file\n");
-    exit(-1);
-  }
-  prodotto_t p;
-  nodo_prodotto_t *aux;
-  char buffer[MAX_LINE_LEN];
-  while (fgets(buffer, sizeof(buffer), fp)) {
-    sscanf(buffer, "%u %s %f\n", &p.codice, p.nome, &p.prezzo);
-    aux = (nodo_prodotto_t *)malloc(sizeof(nodo_prodotto_t));
-    aux->prodotto = p;
-    aux->next = L;
-    L = aux;
-  }
-  fclose(fp);
-  return L;
+  punt = (nodo_prodotto_t *)malloc(sizeof(nodo_prodotto_t));
+  punt->prodotto = p;
+  punt->next = testa;
+
+  return punt;
 }
 
 lista_prodotti_t inserisci_in_fondo(lista_prodotti_t testa, prodotto_t p) {
+  /*
+   * Inserisce in fondo, restituendo la testa della lista
+   */
   lista_prodotti_t punt, cur = testa;
 
   punt = (nodo_prodotto_t *)malloc(sizeof(nodo_prodotto_t));
@@ -63,26 +51,31 @@ lista_prodotti_t inserisci_in_fondo(lista_prodotti_t testa, prodotto_t p) {
   return testa;
 }
 
-lista_prodotti_t leggi_da_file2(char *nome_file) {
-  lista_prodotti_t L = NULL;
+lista_prodotti_t leggi_da_file(char *nome_file, int in_testa) {
+  lista_prodotti_t testa = NULL;
   FILE *fp = fopen(nome_file, "r");
-  if (fp == NULL)
+  if (!fp) {
     fprintf(stderr, "Errore nell'apertura del file\n");
-  else {
-    prodotto_t p;
-    nodo_prodotto_t *aux;
-    while (!feof(fp)) {
-      fscanf(fp, "%u %s %f\n", &p.codice, p.nome, &p.prezzo);
-      L = inserisci_in_fondo(L, p);
-    }
-    fclose(fp);
+    exit(-1);
   }
-  return L;
+  prodotto_t p;
+  nodo_prodotto_t *aux;
+  char buffer[MAX_LINE_LEN];
+  while (fgets(buffer, sizeof(buffer), fp)) {
+    sscanf(buffer, "%u %s %f\n", &p.codice, p.nome, &p.prezzo);
+    if (in_testa) {
+      testa = inserisci_in_testa(testa, p);
+    } else {
+      testa = inserisci_in_fondo(testa, p);
+    }
+  }
+  fclose(fp);
+  return testa;
 }
 
-void stampa_lista_prodotti_t(lista_prodotti_t L) {
-  lista_prodotti_t ptr_corrente = L;
-  while (ptr_corrente != NULL) {
+void stampa_lista_prodotti_t(lista_prodotti_t testa) {
+  lista_prodotti_t ptr_corrente = testa;
+  while (ptr_corrente) {
     printf("Nodo codice: %d nome: %s prezzo: %f\n",
            ptr_corrente->prodotto.codice, ptr_corrente->prodotto.nome,
            ptr_corrente->prodotto.prezzo);
@@ -90,17 +83,9 @@ void stampa_lista_prodotti_t(lista_prodotti_t L) {
   }
 }
 
-void stampa_lista_float(lista_float L) {
-  lista_float ptr_corrente = L;
-  while (ptr_corrente != NULL) {
-    printf("Nodo codice: %f\n", ptr_corrente->valore);
-    ptr_corrente = ptr_corrente->next;
-  }
-}
-
-lista_prodotti_t elimina_prodotti(lista_prodotti_t L, float prezzo_minimo) {
-  lista_prodotti_t ptr_precedente = NULL, ptr_corrente = L, testa = L, temp;
-  while (ptr_corrente != NULL) {
+lista_prodotti_t elimina_prodotti(lista_prodotti_t testa, float prezzo_minimo) {
+  lista_prodotti_t ptr_precedente = NULL, ptr_corrente = testa, temp;
+  while (ptr_corrente) {
     if (ptr_corrente->prodotto.prezzo < prezzo_minimo) {
       temp = ptr_corrente;
       if (ptr_precedente == NULL)
@@ -117,43 +102,29 @@ lista_prodotti_t elimina_prodotti(lista_prodotti_t L, float prezzo_minimo) {
   return testa;
 }
 
-lista_float somma(lista_prodotti_t L) {
-  lista_float testaListaFloat = NULL;
-  nodo_float_t *ptr = NULL, *aux;
-  float totaleCorrente = 0.0;
-  while (L != NULL) {
-    totaleCorrente += L->prodotto.prezzo;
-    aux = (nodo_float_t *)malloc(sizeof(nodo_float_t));
-    aux->valore = totaleCorrente;
-    aux->next = NULL;
-    if (ptr == NULL) {
-      ptr = aux;
-      testaListaFloat = aux;
-    } else {
-      ptr->next = aux;
-      ptr = ptr->next;
-    }
-    L = L->next;
+float somma(lista_prodotti_t testa) {
+  float totale = 0.0;
+  lista_prodotti_t curr = testa;
+  while (curr != NULL) {
+    totale += testa->prodotto.prezzo;
+    curr = curr->next;
   }
-  return testaListaFloat;
+  return totale;
 }
 
 int main() {
   printf("\nLeggi 1 e stampa\n");
-  lista_prodotti_t L = leggi_da_file("lista_prodotti_data.txt");
+  lista_prodotti_t L = leggi_da_file("lista_prodotti_data.txt", 1);
   stampa_lista_prodotti_t(L);
 
   printf("\nLeggi 2 e stampa\n");
-  lista_prodotti_t L2 = leggi_da_file2("lista_prodotti_data.txt");
+  lista_prodotti_t L2 = leggi_da_file("lista_prodotti_data.txt", 0);
   stampa_lista_prodotti_t(L2);
 
   printf("\nElimina prodotto con prezzo inferiore a 4\n");
   L = elimina_prodotti(L, 4);
   stampa_lista_prodotti_t(L);
 
-  printf("\nSomma prodotti\n");
-  lista_float L3 = somma(L);
-  stampa_lista_float(L3);
-
+  printf("\nSomma prodotti %f\n", somma(L));
   return 0;
 }
