@@ -35,28 +35,22 @@ ret_t wc(const char *filename) {
   // Questo ciclo andrà avanti a leggere i caratteri fino a che non raggiungiamo
   // la fine del file.
   while (!feof(fp)) {
-    // Incremento del numero dei caratteri, se non siamo in occorrenza di uno
-    // spazio o a capo.
-    if (ch != ' ' && ch != '\n') {
-      ret.charcount++;
-
-      // Ricordiamoci di reimpostare la flag per contare le parole.
+    ret.charcount++;
+    // Ricordiamoci di reimpostare la flag per contare le parole.
+    if (ch != ' ' && ch != '\n') 
       flag = 0;
-    }
-
+    
     // Ogni spazio e a capo da luogo ad una nuova parola. Controlliamo, grazie
     // alla flag, di ignorare eventuali spazi molteplici consecutivi.
-    if ((ch == ' ' || ch == '\n') && !flag) {
+    /* if ((ch == ' ' || ch == '\n') && !flag) { */
+    else if (!flag) {
       ret.wordcount++;
       flag = 1;
+      // Ogni carattere a capo incontrato nel file farà incrementare il numero
+      // di righe.
     }
-
-    // Ogni carattere a capo incontrato nel file farà incrementare il numero di
-    // righe.
-    if (ch == '\n') {
+    if (ch == '\n')
       ret.linecount++;
-    }
-
     // Lettura del prossimo carattere.
     ch = getc(fp);
   }
@@ -69,10 +63,10 @@ int main() {
 
   // Invochiamo la funzione `wc`, che ci restituisce la struct voluta.
   // Il file `test.txt` deve esistere nella cartella di esecuzione.
-  risultato = wc("test.txt");
+  risultato = wc("wc_lorem_ipsum.txt");
 
   // Stampiamo i valori trovati.
-  printf("%d %d %d", risultato.charcount, risultato.wordcount,
-         risultato.linecount);
+  printf("Lines: %d Words: %d Chars: %d\n", risultato.linecount,
+         risultato.wordcount, risultato.charcount);
   return 0;
 }
