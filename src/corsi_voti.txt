@@ -1,0 +1,3 @@
+sscanf(const char *restrict s, const char *restrict format, ...) -> int
+
+Read formatted input from S.

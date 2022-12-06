@@ -1,0 +1,9 @@
+****
+Informatica_per_Aerospaziali 0001
+prof 0001
+ass 0002
+ass 0003
+****
+Fisica1 0002
+prof 0010
+ass 0003
