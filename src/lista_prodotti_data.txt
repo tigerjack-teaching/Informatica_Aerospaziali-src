@@ -1,0 +1,11 @@
+0001 pasta 0.95
+0002 cereali 3.99
+0003 pane 1.29
+0004 aglio 0.99
+0005 cipolla 1.19
+0006 banana 2.39
+0007 burro_di_arachidi 9.99
+0008 pomodoro 2.99
+0009 olio 7.69
+0010 riso 1.99
+0011 patate 3.99
