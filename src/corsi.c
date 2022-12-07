@@ -1,5 +1,29 @@
 /*
- * WIP
+ **********************************************************
+ * INTRODUZIONE
+ **********************************************************
+ * Vogliamo simulare il funzionamento del sistema di gestione universitario.
+ **********************************************************
+ * DESCRIZIONE FILE CON I DATI
+ **********************************************************
+ * - File 1) corsi_data.txt
+ *   Contiene informazioni sui corsi ed e' strutturato nel modo seguente:
+ *    **** segnala l'inizio di un nuovo corso
+ *    intestazione del corso, formata da: nome_corso id_corso
+ *    dati, formati da: tipo_ruolo matricola
+ *    tipo_ruolo puo' essere titolare, assistente, studente
+ * - File 2) corsi_immatricolati.txt
+ *   Contiene informazioni sugli immatricolati.
+ *     matricola tipo_ruolo cognome nome
+ *   tipo_ruolo puo' essere strutturato, ricercatore, studente
+ * - File 3) corsi_immatricolati.txt
+ *   Contiene informazioni sui voti dei vari corsi
+ *   id_corso matricola_studente voto
+ **********************************************************
+ * LAVORO DA SVOLGERE
+ **********************************************************
+ * Analizzare il codice e implementare le funzioni mancanti
+ * (contrassegnate dalla stringa TODO)
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -231,7 +255,9 @@ void acquisisci_dati_corsi(char *filename_corsi) {
   fclose(fp);
 }
 
-void acquisisci_dati_voti(char *filename_voti) {}
+void acquisisci_dati_voti(char *filename_voti) {
+  /* TODO */
+}
 
 void acquisisci_dati(char *filename_corsi, char *filename_immatricolati,
                      char *filename_voti) {
