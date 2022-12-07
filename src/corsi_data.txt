@@ -1,9 +1,25 @@
 ****
 Informatica_per_Aerospaziali 0001
-prof 0001
-ass 0002
-ass 0003
+titolare 0001
+assist 0002
+assist 0003
+studente 0007
+studente 0008
+studente 0020
+studente 0021
+studente 0022
+studente 0010
 ****
 Fisica1 0002
-prof 0010
-ass 0003
+titolare 0010
+assist 0003
+studente 0004
+studente 0005
+studente 0006
+studente 0007
+studente 0008
+****
+Quantum_Computing 0003
+titolare 0002
+studente 0008
+studente 0010
