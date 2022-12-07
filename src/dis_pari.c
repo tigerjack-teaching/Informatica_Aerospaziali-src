@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
   printf("Inserisci un intero positivo\n");
   scanf("%d", &x);
 
-  printf("%f e': ", x);
+  printf("%d e': ", x);
   if (x % 2 == 0) {
     printf("pari");
   }
