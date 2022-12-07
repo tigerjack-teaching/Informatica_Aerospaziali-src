@@ -30,9 +30,14 @@
  *   appare sempre il corrispondente identificatore numerico (ID_viaX).
  *   ATTENZIONE, la distanza tra due vie e' presente un'unica volta nel file
  *   quindi se nel file e' presente ID_viaA;ViaA;ID_viaB;ViaB;Distanza allora
- *non e' presente una riga con ID_viaB;ViaB;ID_viaA;ViaA;Distanza o viceversa.
- *In ogni riga, i diversi valori sono separati da ; e i \r\n rappresentano i
- *   caratteri di a capo.
+ *   non e' presente una riga con ID_viaB;ViaB;ID_viaA;ViaA;Distanza o
+ *   viceversa. In ogni riga, i diversi valori sono separati da ; e i \r\n
+ *   rappresentano i caratteri di a capo.
+ **********************************************************
+ * LAVORO DA SVOLGERE
+ **********************************************************
+ * Analizzare il codice e implementare le funzioni mancanti
+ * (contrassegnate dalla stringa TODO)
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -43,11 +48,6 @@
 #define MAX_VIE 200
 #define MAX_NOLEGGI 2000
 
-/*
-**********************************************************
-* DESCRIZIONE DEL LAVORO DA SVOLGERE
-**********************************************************
-*/
 typedef struct {
   /* Struttura contente la distanza tra le vie */
   unsigned id_via1;
@@ -79,6 +79,8 @@ typedef struct {
  * tra le vie (File 2) e un array di puntatori a tipo distanza_vie_t. La
  * funzione dovra' memorizzare in array_vie i puntatori alle strutture contenti
  * la distanza tra le diverse vie.
+ *
+ * TODO
  */
 int leggi_vie(char *nome_file, distanza_vie_t *array_vie[], int n_vie);
 
@@ -206,6 +208,7 @@ int scrivi_punti_bonus(char *nome_file_clienti, noleggio_t *noleggi[],
     printf("Leggo tutte le vie\n");
     distanza_vie_t *vie[MAX_VIE];
     int n_vie = leggi_vie("car_sharing_vie.csv", vie, MAX_VIE);
+
     printf("Stampo tutte le vie\n");
     stampa_vie(vie, n_vie);
 
@@ -221,7 +224,8 @@ int scrivi_punti_bonus(char *nome_file_clienti, noleggio_t *noleggi[],
     noleggio_t *noleggi[MAX_NOLEGGI];
     printf("Leggo dati noleggi\n");
     int n_noleggi =
-        leggi_dati_noleggi("car_sharing_noleggi.csv", noleggi, MAX_NOLEGGI);
+        leggi_dati_noleggi("car_sharing_noleggio.csv", noleggi, MAX_NOLEGGI);
+    printf("Letti %d noleggi\n", n_noleggi);
 
     printf("Calcolo bonus\n");
     scrivi_punti_bonus("car_sharing_clienti.csv", noleggi, n_noleggi);
