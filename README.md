@@ -142,13 +142,19 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 
 ## Ese. 07
 **Malloc e file**
+* [Riallocazione con realloc](src/string_realloc.c)
+* [Riallocazione senza realloc](src/string_norealloc.c)
+* [Lista prodotti](src/lista_prodotti.c)
+* [Word counts](src/wc.c)
+* [Cesare](src/cesare.c)
+* [Banca](src/banca.c)
+
+**Vari**
+* [Plane manager](src/plane_manager_heap.c)
+* [Car sharing](src/car_sharing.c)
+* [Corsi](src/corsi.c)
 <!-- * [Lotteria](src/lotteria.c) -->
-<!-- * [Plane manager](src/plane_manager_heap.c) -->
-<!-- * [Lista](src/lista.c) -->
-<!-- * [Words count](src/wc.c) -->
-<!-- * [Cesare](src/cesare.c) -->
-<!-- * [Banca](src/banca.c) -->
-<!-- * [Banca](src/gis.c) -->
+<!-- * [PIL](src/pil.c) -->
 
 
 
@@ -187,6 +193,7 @@ Lista incrementale: ogni sottosezione presuppone la conoscenza della sezione pre
 * [Coppie](src/coppie.c)
 * [Intervallo valori](src/intervallo_valori.c)
 * [Moda sequenza](src/moda.c)
+* [Moda sequenza](src/moda2.c)
 
 ### 2D
 * [Gioco tris](src/tris.c)
@@ -216,29 +223,31 @@ Lista incrementale: ogni sottosezione presuppone la conoscenza della sezione pre
 * [Pseudo-social](src/social2.c)
 * [Cartesiano](src/cartesiano.c)
 
-<!-- ## Funzioni -->
-<!-- * [Anagrammi](src/anagrammi3.c) -->
-<!-- * [Cerniera](src/cerniera.c) -->
-<!-- * [Parole hertziane](src/hertziane.c) -->
-<!-- * [Stringhe libreria](src/stringhe-libreria.c) -->
-<!-- * [Quadrato vettore](src/quadrato-vettore.c) -->
-<!-- * [MacLaurin](src/maclaurin.c) -->
+## Funzioni
+* [Anagrammi](src/anagrammi3.c)
+* [Cerniera](src/cerniera.c)
+* [Parole hertziane](src/hertziane.c)
+* [Stringhe libreria](src/stringhe-libreria.c)
+* [Quadrato vettore](src/quadrato-vettore.c)
+* [MacLaurin](src/maclaurin.c)
 
-<!-- ### + Struct -->
-<!-- * [Tuffi](src/tuffi.c) -->
-<!-- * [Fight game](src/fight_game.c) -->
-<!-- * [Plane manager](src/plane_manager_stack.c) -->
-<!-- * [Plane manager](src/plane_manager_heap.c) -->
-<!-- * [Lotteria](src/lotteria.c) -->
-<!-- * [Lista](src/lista.c) -->
-<!-- * [Albero](src/tree.c) -->
+### + Struct
+* [Tuffi](src/tuffi.c)
+* [Fight game](src/fight_game.c)
+* [Plane manager](src/plane_manager_stack.c)
+* [Plane manager](src/plane_manager_heap.c)
+* [Lotteria](src/lotteria.c)
+* [Lista](src/lista.c)
+* [Albero](src/tree.c)
 
-<!-- ## File -->
-<!-- * [Cifrario](src/cesare.c) -->
-<!-- * [Banca](src/banca_estratto.c) -->
-<!-- * [Word count](src/wc.c) -->
-<!-- * [PIL](src/pil.c) -->
+## File
+* [Cifrario](src/cesare.c)
+* [Banca](src/banca_estratto.c)
+* [Word count](src/wc.c)
+* [PIL](src/pil.c)
 
-<!-- ## Puntatori -->
-<!-- * [Stringhe libreria](src/stringhe_libreria_pointers.c) -->
-<!-- * [Puntatori e const](src/pointers_const.c) -->
+## Puntatori
+* [Stringhe libreria](src/stringhe_libreria_pointers.c)
+* [Puntatori e const](src/pointers_const.c)
+* [Riallocazione con realloc](src/string_realloc.c)
+* [Riallocazione senza realloc](src/string_norealloc.c)
