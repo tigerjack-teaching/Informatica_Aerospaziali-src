@@ -142,6 +142,7 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 
 ## Ese. 07
 **Malloc e file**
+* [Note su feof](src/feof_corner_cases.c)
 * [Riallocazione con realloc](src/string_realloc.c)
 * [Riallocazione senza realloc](src/string_norealloc.c)
 * [Lista prodotti](src/lista_prodotti.c)
@@ -150,7 +151,7 @@ Informazioni aggiuntive [qui](https://www.cs.swarthmore.edu/~newhall/unixhelp/ho
 * [Banca](src/banca.c)
 
 **Vari**
-* [Plane manager](src/plane_manager_heap.c)
+* [Plane manager con heap](src/plane_manager_heap.c)
 * [Car sharing](src/car_sharing.c)
 * [Corsi](src/corsi.c)
 <!-- * [Lotteria](src/lotteria.c) -->
