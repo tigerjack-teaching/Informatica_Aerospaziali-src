@@ -1,3 +1,8 @@
+/*
+ * TAGS: malloc, file
+ *
+ * Gestisci un file contenente prodotti come una lista
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
